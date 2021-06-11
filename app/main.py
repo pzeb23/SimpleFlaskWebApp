@@ -6,7 +6,7 @@ from newsapi import NewsApiClient
 app = Flask(__name__)
 
 # Init
-#newsapi = NewsApiClient(api_key='b251fd71f49b4976a8d549c9d51d9080')
+newsapi = NewsApiClient(api_key='b251fd71f49b4976a8d549c9d51d9080')
 
 @app.route("/")
 def home_view():
