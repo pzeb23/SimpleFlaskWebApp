@@ -38,4 +38,4 @@ def home_view():
 #     return 2
 
 
-app.run(debug = True)
+#app.run(debug = True)
