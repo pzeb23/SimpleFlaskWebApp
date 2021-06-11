@@ -12,6 +12,7 @@ Jinja2 = "==3.0.1"
 MarkupSafe = "==2.0.1"
 Werkzeug = "==2.0.1"
 requests = "==2.25.1"
+newsapi-python = "-0.2.6"
 
 [dev-packages]
 
