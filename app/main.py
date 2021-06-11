@@ -11,9 +11,9 @@ news_response = ""
 news_content = ""
 news_image = ""
 
-@app.route("/")
-def home_view():
-	return "<h1>Welcome to Geeks for Geeks</h1>"
+@app.route("/") 
+def home():
+    return render_template('subfolder/page.html', news_response=news_response, news_content = news_content, news_image = news_image)
 
 @app.route("/getnewsparam", methods=["POST"])
 def get_newsparam():
