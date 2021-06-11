@@ -15,9 +15,9 @@ def home_view():
 @app.route("/getnewsparam", methods=["POST"])
 def get_newsparam():
 
-    query = request.form["query"]
+    #query = request.form["query"]
 
-    top_headlines = newsapi.get_top_headlines(q=query, language='en')
+    top_headlines = newsapi.get_top_headlines(q="microsoft", language='en')
 
     articles = top_headlines['articles']
     global news_response
@@ -34,7 +34,8 @@ def get_newsparam():
         news_content = articles[0]['content']
         news_image = articles[0]['urlToImage']
 
-    return redirect(request.referrer)
+    #return redirect(request.referrer)
+    return 2
 
 
 app.run(debug = True)
