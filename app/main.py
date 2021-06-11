@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request
-#import requests
+import requests
 import json
-from newsapi import NewsApiClient
+#from newsapi import NewsApiClient
 
 app = Flask(__name__)
 
