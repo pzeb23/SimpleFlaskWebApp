@@ -33,10 +33,10 @@ def get_news():
 @app.route("/getnewsparam", methods=["POST"])
 def get_newsparam():
 
-    seq = [0, 1]
+    seq = [0, 1, 2]
     api_key_index = random.choice(seq)
 
-    news_api_keys = ['b251fd71f49b4976a8d549c9d51d9080', '40432cbc71b943658918e552616b21dd']
+    news_api_keys = ['b251fd71f49b4976a8d549c9d51d9080', '40432cbc71b943658918e552616b21dd', 'c4a0b4bd8b0245ac96edf39ebb9a7ac5']
 
     newsapi = NewsApiClient(api_key=news_api_keys[api_key_index])
 
@@ -52,7 +52,7 @@ def get_newsparam():
     if top_headlines['totalResults'] == 0:
         news_response = "sorry, no content"
         news_content = "sorry, no content"
-        news_image = "https://i.kym-cdn.com/entries/icons/original/000/019/277/confusedtravolta.jpg"
+        #news_image = "https://i.kym-cdn.com/entries/icons/original/000/019/277/confusedtravolta.jpg"
 
     else:
         news_response = articles[0]['title']
