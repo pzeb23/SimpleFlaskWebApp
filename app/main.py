@@ -13,7 +13,8 @@ news_image = ""
 
 @app.route("/") 
 def home(): 
-    return render_template('subfolder/page.html', news_response=news_response, news_content = news_content, news_image = news_image)
+    #return render_template('subfolder/page.html', news_response=news_response, news_content = news_content, news_image = news_image)
+    return render_template('index.html')
 
 @app.route("/getposts", methods=["GET"])
 def get_posts():
