@@ -2,11 +2,11 @@ from flask import Flask, render_template, redirect, request
 import requests
 import json
 from newsapi import NewsApiClient
+import random
 
 app = Flask(__name__)
 
-# Init
-newsapi = NewsApiClient(api_key='b251fd71f49b4976a8d549c9d51d9080')
+
 news_response = ""
 news_content = ""
 news_image = ""
@@ -32,6 +32,13 @@ def get_news():
 
 @app.route("/getnewsparam", methods=["POST"])
 def get_newsparam():
+
+    seq = [0, 1]
+    api_key_index = random.choice(seq)
+
+    news_api_keys = ['b251fd71f49b4976a8d549c9d51d9080', '40432cbc71b943658918e552616b21dd']
+
+    newsapi = NewsApiClient(api_key=news_api_keys[api_key_index])
 
     query = request.form["query"]
 
