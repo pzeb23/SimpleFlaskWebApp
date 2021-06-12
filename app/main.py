@@ -29,7 +29,8 @@ def get_newsparam():
 
     query = request.form["query"]
 
-    top_headlines = newsapi.get_top_headlines(q=query, language='en')
+    #top_headlines = newsapi.get_top_headlines(q=query, language='en')
+    top_headlines = newsapi.get_everything(q=query, language='en')
 
     articles = top_headlines['articles']
     global news_title
