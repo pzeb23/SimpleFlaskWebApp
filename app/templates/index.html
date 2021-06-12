@@ -32,6 +32,8 @@
           <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
               <div class="navbar-top">
+
+
                 <div class="d-flex justify-content-between align-items-center">
                   <ul class="navbar-top-left-menu">
                     <li class="nav-item">
@@ -149,22 +151,36 @@
         <div class="flash-news-banner">
           <div class="container">
             <div class="row" data-aos="fade-up">
+
+                <div class="card-body">
+                    <form method="POST" action="getnewsparam"> 
+                        <div class="btn-group" role="group" >
+                            <div><label for="lname" style="display: block">Enter the query for the News API search: </label></div>
+                            <div>
+                                <input type="text" id="lname" name="query" style="margin-left: 10px;">
+                                <input type="submit" class="btn btn-secondary" style="background-color: #032A63; color: white"/>
+                            </div>
+                            
+                        </div> 
+                    </form> 
+                </div>   
+
                 <div class="col-xl-8 stretch-card grid-margin">
                   <div class="position-relative">
                     <img
-                      src="{{ url_for('static',filename='images/dashboard/banner.jpg') }}"
-                      alt="banner"
+                      src="{{news_image}}"
                       class="img-fluid"
                     />
                     <div class="banner-content">
                       <div class="badge badge-danger fs-12 font-weight-bold mb-3">
                         global news
                       </div>
-                      <h1 class="mb-0">GLOBAL PANDEMIC</h1>
-                      <h1 class="mb-2">
-                        Coronavirus Outbreak LIVE Updates: ICSE, CBSE Exams
-                        Postponed, 168 Trains
+                      <h1 class="mb-4">
+                          {{news_title}}  
                       </h1>
+                      <h3 class="mb-2">
+                        {{news_content}}
+                      </h3>
                       <div class="fs-12">
                         <span class="mr-2">Photo </span>10 Minutes ago
                       </div>

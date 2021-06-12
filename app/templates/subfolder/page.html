@@ -10,15 +10,15 @@
                     <div class="card-header">The title of the article is: {{news_response}}</div>
                     <div class="card-header">The content of the article is: {{news_content}}</div>
                     
-                    {% if news_response == "sorry, no content" %}
+                    <!-- {% if news_response == "sorry, no content" %}
                         <div class="tenor-gif-embed" data-postid="5114829" data-share-method="host" data-width="100%" data-aspect-ratio="1.0309278350515463"><a href="https://tenor.com/view/confused-john-travolta-gif-5114829">Confused John Travolta GIF</a> from <a href="https://tenor.com/search/confused-gifs">Confused GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-                    {% else %}
+                    {% else %} -->
                         <img style="max-height:500px;
                         max-width:500px;
                         height:auto;
                         width:auto; margin-left: auto;
                         margin-right: auto;" src="{{news_image}}"/>
-                    {% endif %}
+                    <!-- {% endif %} -->
                     <div class="card-body">
                         <form method="POST" action="getnewsparam"> 
                             <div class="btn-group" role="group" >
