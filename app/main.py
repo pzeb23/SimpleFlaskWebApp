@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request
-import requests
-import json
+# import requests
+#import json
 from newsapi import NewsApiClient
 import random
 
@@ -16,19 +16,19 @@ def home():
     #return render_template('subfolder/page.html', news_response=news_response, news_content = news_content, news_image = news_image)
     return render_template('index.html')
 
-@app.route("/getposts", methods=["GET"])
-def get_posts():
-    r = requests.get('https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty')
-    jsonData = r.json()
+# @app.route("/getposts", methods=["GET"])
+# def get_posts():
+#     r = requests.get('https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty')
+#     jsonData = r.json()
 
-    result = json.dumps(jsonData[:5])
-    return result
+#     result = json.dumps(jsonData[:5])
+#     return result
 
-@app.route("/getnews", methods=["GET"])
-def get_news():
-    result = top_headlines["articles"]
+# @app.route("/getnews", methods=["GET"])
+# def get_news():
+#     result = top_headlines["articles"]
 
-    return json.dumps(result)
+#     return json.dumps(result)
 
 
 @app.route("/getnewsparam", methods=["POST"])
