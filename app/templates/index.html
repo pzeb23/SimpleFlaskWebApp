@@ -155,13 +155,10 @@
                 <div class="card-body">
                     <form method="POST" action="getnewsparam"> 
                         <div class="btn-group" role="group" >
-                            <div><label for="lname" style="display: block">Enter the query for the News API search: </label></div>
-                            <div>
-                                <input type="text" id="lname" name="query" style="margin-left: 10px;">
-                                <input type="submit" class="btn btn-secondary" style="background-color: #032A63; color: white"/>
-                            </div>
-                            
-                        </div> 
+                            <label for="lname" style="display: block">Enter the query for the News API search: </label>
+                            <input required="true" type="text" id="lname" name="query" style="margin-left: 10px;">
+                            <input type="submit" class="btn btn-secondary" style="background-color: #032A63; color: white"/>
+                        </div>
                     </form> 
                 </div>   
 
