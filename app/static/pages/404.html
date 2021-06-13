@@ -9,39 +9,34 @@
     <!-- plugin css for this page -->
     <link
       rel="stylesheet"
-      href="{{ url_for('static',filename='vendors/mainpage.css') }}"
+      href=".././assets/vendors/mdi/css/materialdesignicons.min.css"
     />
-    <link rel="stylesheet" href="{{ url_for('static',filename='vendors/aos/dist/aos.css/aos.css') }}"/>
- 
-
+    <link rel="stylesheet" href="../assets/vendors/aos/dist/aos.css/aos.css" />
     <!-- End plugin css for this page -->
-    <link rel="shortcut icon" href="{{ url_for('static',filename='vendors/images/favicon.png') }}" />
-
+    <link rel="shortcut icon" href="../assets/images/favicon.png" />
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-
-    
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!-- endinject -->
   </head>
 
   <body>
     <div class="container-scroller">
-      <div class="main-panel">
-        <!-- partial:partials/_navbar.html -->
-        <header id="header">
+      <header id="header">
+        <div class="container">
+          <!-- partial:../partials/_navbar.html -->
+
+          <header id="header">
           <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
               <div class="navbar-top">
-
-
                 <div class="d-flex justify-content-between align-items-center">
                   <ul class="navbar-top-left-menu">
-                    <!-- <li class="nav-item">
-                      <a href="pages/index-inner.html" class="nav-link">Advertise</a>
+                    <li class="nav-item">
+                      <a href="./index-inner.html" class="nav-link">Advertise</a>
                     </li>
                     <li class="nav-item">
-                      <a href="pages/aboutus.html" class="nav-link">About</a>
-                    </li> -->
+                      <a href="./aboutus.html" class="nav-link">About</a>
+                    </li>
                     <li class="nav-item">
                       <a href="#" class="nav-link">Events</a>
                     </li>
@@ -69,9 +64,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <a class="navbar-brand" href="#"
-                      ><img src="{{ url_for('static',filename='images/logo.svg') }}" alt=""
-
-                      
+                      ><img src="../assets/images/logo.svg" alt=""
                     /></a>
                   </div>
                   <div>
@@ -97,31 +90,30 @@
                             <i class="mdi mdi-close"></i>
                           </button>
                         </li>
-                        <!-- <li class="nav-item active">
-                          <a class="nav-link" href="index.html">Home</a>
-                        </li> 
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ url_for('static',filename='pages/magazine.html') }}">MAGAZINE</a>
-                          
+                        <li class="nav-item active">
+                          <a class="nav-link" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="pages/business.html">Business</a>
+                          <a class="nav-link" href="./magazine.html">MAGAZINE</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="pages/sports.html">Sports</a>
+                          <a class="nav-link" href="./business.html">Business</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="pages/art.html">Art</a>
+                          <a class="nav-link" href="./sports.html">Sports</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="pages/politics.html">POLITICS</a>
+                          <a class="nav-link" href="./art.html">Art</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="pages/travel.html">Travel</a>
+                          <a class="nav-link" href="./politics.html">POLITICS</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="pages/contactus.html">Contact</a>
-                        </li> -->
+                          <a class="nav-link" href="./travel.html">Travel</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./contactus.html">Contact</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -148,117 +140,39 @@
           </div>
         </header>
 
-        <!-- partial -->
-        <div class="flash-news-banner">
-          <div class="container">
-            <div class="row" data-aos="fade-up">
 
-                <div class="card-body">
-                    <form method="POST" action="getnewsparam"> 
-                        <div class="btn-group" role="group" >
-                            <label for="lname" style="display: block">Enter the query for the News API search: </label>
-                            <input required="true" type="text" id="lname" name="query" style="margin-left: 10px;">
-                            <input type="submit" class="btn btn-secondary" style="background-color: #032A63; color: white"/>
-                        </div>
-                    </form> 
-                </div>   
-
-                <div class="col-xl-8 stretch-card grid-margin">
-                  <div class="position-relative">
-                    <img
-                      src="{{news_image}}"
-                      class="img-fluid"
-                    />
-                    <div class="banner-content">
-                      <div class="badge badge-danger fs-12 font-weight-bold mb-3">
-                        global news
-                      </div>
-                      <h1 class="mb-4">
-                          {{news_title}}  
-                      </h1>
-                      <h3 class="mb-2">
-                        {{news_content}}
-                      </h3>
-                      <div class="fs-12">
-                        <span class="mr-2">Photo </span>10 Minutes ago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 stretch-card grid-margin">
-                  <div class="card bg-dark text-white">
-                    <div class="card-body">
-                      <h2>Latest news</h2>
-  
-                      <div
-                        class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
-                      >
-                        <div class="pr-3">
-                          <h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
-                          <div class="fs-12">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </div>
-                        </div>
-                        <div class="rotate-img">
-                          <img
-                            src="{{ url_for('static',filename='images/dashboard/home_1.jpg') }}"
-                            alt="thumb"
-                            class="img-fluid img-lg"
-                          />
-                        </div>
-                      </div>
-  
-                      <div
-                        class="d-flex border-bottom-blue pb-4 pt-4 align-items-center justify-content-between"
-                      >
-                        <div class="pr-3">
-                          <h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
-                          <div class="fs-12">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </div>
-                        </div>
-                        <div class="rotate-img">
-                          <img
-                            src="{{ url_for('static',filename='images/dashboard/home_2.jpg') }}"
-                            alt="thumb"
-                            class="img-fluid img-lg"
-                          />
-                        </div>
-                      </div>
-  
-                      <div
-                        class="d-flex pt-4 align-items-center justify-content-between"
-                      >
-                        <div class="pr-3">
-                          <h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
-                          <div class="fs-12">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </div>
-                        </div>
-                        <div class="rotate-img">
-                          <img
-                            src="{{ url_for('static',filename='images/dashboard/home_3.jpg') }}"
-                            alt="thumb"
-                            class="img-fluid img-lg"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <!-- partial -->
+        </div>
+      </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="error-wrap">
+              <div class="error-title">
+                404 • Page not found
               </div>
+              <p class="fs-15">
+                Oops! The page you are looking for does not exist. It might have
+                been moved or deleted. Try a search below...
+              </p>
+
+              <div class="search-container">
+                <input type="text" placeholder="Search.." name="search" />
+                <button type="submit"><i class="mdi mdi-magnify"></i></button>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- main-panel ends -->
-        <!-- container-scroller ends -->
-
-        <!-- partial:partials/_footer.html -->
-        <footer>
+      </div>
+    </div>
+    <!-- container-scroller ends -->
+    <!-- partial:../partials/_footer.html -->
+    <footer>
           <div class="footer-top">
             <div class="container">
               <div class="row">
                 <div class="col-sm-5">
-                  <img src="{{ url_for('static',filename='images/logo.svg') }}" class="footer-logo" alt="" />
+                  <img src="../assets/images/logo.svg" class="footer-logo" alt="" />
                   <h5 class="font-weight-normal mt-4 mb-5">
                     Newspaper is your news, entertainment, music fashion website. We
                     provide you with the latest breaking news and videos straight from
@@ -290,7 +204,7 @@
                         <div class="row">
                           <div class="col-3">
                             <img
-                              src="{{ url_for('static',filename='images/dashboard/home_1.jpg') }}"
+                              src="../assets/images/dashboard/home_1.jpg"
                               alt="thumb"
                               class="img-fluid"
                             />
@@ -311,7 +225,7 @@
                         <div class="row">
                           <div class="col-3">
                             <img
-                              src="{{ url_for('static',filename='images/dashboard/home_2.jpg') }}"
+                              src="../assets/images/dashboard/home_2.jpg"
                               alt="thumb"
                               class="img-fluid"
                             />
@@ -332,7 +246,7 @@
                         <div class="row">
                           <div class="col-3">
                             <img
-                              src="{{ url_for('static',filename='images/dashboard/home_3.jpg') }}"
+                              src="../assets/images/dashboard/home_3.jpg"
                               alt="thumb"
                               class="img-fluid"
                             />
@@ -402,19 +316,18 @@
           </div>
         </footer>
 
-        <!-- partial -->
-      </div>
-    </div>
+    <!-- partial -->
     <!-- inject:js -->
-    <script src="{{ url_for('static',filename='vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
-    <script src="{{ url_for('static',filename='vendors/aos/dist/aos.js/aos.js') }}"></script>
+
+    <script src="../assets/vendors/aos/dist/aos.js/aos.js"></script>
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
-    <script src="{{ url_for('static',filename='js/demo.js') }}"></script>
-    
-    <script src="{{ url_for('static',filename='js/jquery.easeScroll.js') }}"></script>    
+    <script src="../assets/js/demo.js"></script>
+    <script src="../assets/js/jquery.easeScroll.js"></script>
+    <script src="../assets/js/jquery.easeScroll.js"></script>
     <!-- End custom js for this page-->
   </body>
 </html>

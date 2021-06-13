@@ -39,7 +39,7 @@ def get_newsparam():
     
     if top_headlines['totalResults'] == 0:
         news_title = "sorry, no content"
-        news_content = "sorry, no content"
+        news_content = "(no article content)"
         news_image = "https://i.kym-cdn.com/entries/icons/original/000/019/277/confusedtravolta.jpg"
 
     else:
